@@ -1,0 +1,50 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.wza-instructions ol {
+    margin-left: 14px;
+}
+
+.wza-form-container {
+    background-color: #fff;
+    padding: 20px;
+    width: 60%;
+}
+
+.wza-form-container .form__row {
+    margin-bottom: 10px;
+}
+
+.wza-container label.form--label {
+    width: 200px;
+}
+
+.wza-form-container .form__row input[type=text],
+.wza-form-container .form__row input[type=password] {
+    width: 380px;
+}
+
+.wza-form-container label.form--label {
+    display: inline-block;
+    width: 200px;
+}
+
+.wza-form-container .toggle-access-token {
+    margin-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.button.button-vlp-primary {
+    background-color: #f8931f;
+    color: #fff;
+    border-color: #f8931f;
+}
+
+.button.button-vlp-primary:hover {
+    background: #f0f0f1;
+    border-color: #f8931f;
+    color: #f8931f;
+}
