@@ -9,21 +9,20 @@
  * that starts the plugin.
  *
  * @link              https://www.vlpmedia.agency
- * @since             1.0.0
+ * @since             1.0
  * @package           VLP_WC_Customer_to_Zoho_Account
  *
  * @wordpress-plugin
  * Plugin Name:       VLP Create Zoho Account for WooCommerce Customers
  * Description:       This plugin create accounts from WooCommerce checkout account creation to Zoho Accounts through Zoho API
- * Version:           1.0.0
+ * Version:           1.0
  * Author:            VLP Media Ltd
  * Author URI:        https://www.vlpmedia.agency
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       vlp-wc-customer-to-zoho-account
  * Domain Path:       /languages
- * Requires at least: 4.6
- * Tested up to:      5.9
+ * 
  */
 
 // If this file is called directly, abort.

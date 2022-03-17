@@ -161,8 +161,7 @@ class Woocommerce_Zoho_Account {
 		$wza_setup = new WZA_Zoho_setup_page();
 		$this->loader->add_action( 'admin_init', $wza_setup, 'zoho_setup_page_submit' );
 		$this->loader->add_action( 'user_register' , $wza_setup, 'create_account');
-
-
+		
 		$wza_menu = new WZA_Account_Menu();
 		$this->loader->add_action( 'admin_menu', $wza_menu, 'wza_add_menu' );
 
