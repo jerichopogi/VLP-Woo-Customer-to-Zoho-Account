@@ -26,6 +26,7 @@
             <li>Now you are connected to Zoho!!!</li>
         </ol>
     </div>
+    <?= WZA_Zoho_setup_page::is_access_token_expired(); ?>
     <form method="post" action="<?php echo esc_attr($_SERVER["REQUEST_URI"]); ?>">
     <?php wp_nonce_field('wza_settings_nonce'); ?>
     <div class="page">

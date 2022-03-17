@@ -61,7 +61,6 @@ class WZA_Zoho_setup_page {
         }
     }
 
-
     //Get Auth URL
     public static function get_authorization_url() {
         $client_id = self::get_client_id();
@@ -132,7 +131,7 @@ class WZA_Zoho_setup_page {
         $time_now = time();
         $time_generated = isset(get_option('wza_zoho_access_token')['time_generated']) ? get_option('wza_zoho_access_token')['time_generated'] : false;
         $time_expires_in = isset(get_option('wza_zoho_access_token')['expires_in']) ? get_option('wza_zoho_access_token')['expires_in'] : false;
-        
+
         if($time_generated && $time_expires_in) {
             $time_expiry = $time_generated + $time_expires_in;
 
@@ -175,19 +174,21 @@ class WZA_Zoho_setup_page {
             );
             
             $authorization_url = self::get_zoho_server_url() . '/oauth/v2/token';
-    		
-            $response_json = self::zoho_curl($authorization_url, $post_params, false, 'POST');
-    		$response_arr = json_decode($response_json, true);
-            
-    		if($response_arr) {
-    		    $response_arr['time_generated'] = time();
+
+            $query_url = $authorization_url. '?' . http_build_query($post_params);
+    		$response_arr = wp_remote_post($query_url);
+            $body = wp_remote_retrieve_body( $response_arr );
+            $body = json_decode( $body, true );
+
+    		if($body) {
+    		    $body['time_generated'] = time();
     		}
     		
     		self::custom_log(current_time('Y-m-d H:i:s'));
-    		self::custom_log(var_export($response_arr, true));
+    		self::custom_log(var_export($body, true));
     		self::custom_log('===========================================================');
     		
-    		return update_option('wza_zoho_access_token', $response_arr);
+    		return update_option('wza_zoho_access_token', $body);
         } else {
     		return false;
         }
